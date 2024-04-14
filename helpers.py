@@ -1,10 +1,10 @@
 import random
 import string
 import requests
-
+import allure
 
 class Helpers:
-
+    @allure.step("Регистрация нового курьера и возврат логина/пароля")
     def register_new_courier_and_return_login_password(self):
         login_pass = []
 
@@ -27,6 +27,7 @@ class Helpers:
 
         return login_pass
 
+    @allure.step("Генерация случайной строки")
     def generate_random_string_fixture(self):
         letters = string.ascii_lowercase
         random_string = ''.join(random.choice(letters) for i in range(10))
